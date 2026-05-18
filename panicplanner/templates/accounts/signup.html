@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+{% load static %}
+
+<!DOCTYPE  html>
 <html>
 
 <head>
@@ -9,16 +11,18 @@
 
 <div class="container">
     <div class="card">
-        <h2>CReate Account</h2>
+        <h2>Create Account</h2>
 
         <form method="POST">
+
+            {% csrf_token %}
 
             <input type="text" name="username" placeholder="Username">
 
             <input type="password" name="password" placeholder="Password">
 
             <button type="submit">
-                Signuo
+                Signup
             </button>
 
 
