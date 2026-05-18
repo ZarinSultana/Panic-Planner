@@ -26,3 +26,14 @@ class Exam(models.Model):
             return self.title
 
 
+
+class Topic(models.Model):
+      subject=models.ForeignKey(Subject,on_delete=models.CASCADE)
+
+      topic_name=models.CharField(max_length=200)
+      completed=models.BooleanField(default=False)
+
+
+      def __str__(self):
+            return self.topic_name
+
