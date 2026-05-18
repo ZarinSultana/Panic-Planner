@@ -1,0 +1,80 @@
+.dashboard-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* HEADER */
+.dashboard-header {
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* GRID CARDS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* CARD STYLE */
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border: 1px solid #38bdf8;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+/* MAIN GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* BOX STYLE */
+.box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+    border: 1px solid #6366f1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* ITEMS INSIDE BOX */
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #334155;
+}
+
+/* MOTIVATION */
+.motivation {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #38bdf8;
+}
