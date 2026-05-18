@@ -1,0 +1,36 @@
+body{
+    background:#f4f6f9;
+    font-family:Arial;
+    }
+
+.container{
+     display:flex;
+     justify-content:center;
+     align-item:center;
+     height:100vh;
+     }
+
+.card{
+     width:350px;
+     background:white;
+     padding:30px;
+     border-radius:15px;
+     }
+
+input{
+     width:100%;
+     padding:10px;
+     margin:10px 0;
+     border:1px solid #ccc;
+     border-radius:8px;
+     }
+
+button{
+     width:100%;
+     padding:10px;
+     background:blue;
+     color:white;
+     border:none;
+     border-radius:8px;
+     cursor:pointer;
+     }
