@@ -1,0 +1,33 @@
+{% load static %}
+
+<!DOCTYPE  html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{% static 'css/auth.css' %}">
+</head>
+
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Create Account</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Username">
+
+            <input type="password" name="password" placeholder="Password">
+
+            <button type="submit">
+                Signup
+            </button>
+
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
