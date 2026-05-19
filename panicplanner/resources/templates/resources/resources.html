@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/resources.css">
+{% endblock %}
+
+{% block content %}
+
+<p class="resources-page-title">📚 Help & Resources</p>
+<p class="resources-subtitle">Trusted tools, hotlines, and articles to support your mental health journey.</p>
+
+{% if emergency %}
+<div class="emergency-banner">
+    <h2>🚨 Emergency Contacts</h2>
+    <div class="emergency-grid">
+        {% for r in emergency %}
+        <div class="emergency-card">
+            <h3>{{ r.title }}</h3>
+            <p>{{ r.description }}</p>
+            {% if r.url %}
+                <a href="{{ r.url }}" target="_blank" class="emergency-link">Open →</a>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- FILTER TABS -->
+<div class="filter-bar">
+    <a href="{% url 'resources:resources_list' %}"
+       class="filter-tab {% if not selected_category %}active{% endif %}">All</a>
+    {% for value, label in categories %}
+    <a href="{% url 'resources:resources_list' %}?category={{ value }}"
+       class="filter-tab {% if selected_category == value %}active{% endif %}">
+        {{ label }}
+    </a>
+    {% endfor %}
+</div>
+
+<!-- RESOURCE CARDS -->
+<div class="resource-grid">
+    {% for r in resources %}
+    <div class="resource-card">
+        <span class="badge badge-{{ r.category }}">{{ r.get_category_display }}</span>
+        <h3>{{ r.title }}</h3>
+        <p>{{ r.description }}</p>
+        <div class="card-footer">
+            {% if r.url %}
+                <a href="{{ r.url }}" target="_blank" class="res-btn res-btn-primary">Open →</a>
+            {% endif %}
+            <a href="{% url 'resources:resource_detail' r.pk %}" class="res-btn res-btn-secondary">Details</a>
+        </div>
+    </div>
+    {% empty %}
+    <div class="empty-state">
+        <p>😔 No resources found in this category.</p>
+        <a href="{% url 'resources:resources_list' %}" class="res-btn res-btn-primary">See All</a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

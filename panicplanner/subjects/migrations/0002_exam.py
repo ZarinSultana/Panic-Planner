@@ -18,7 +18,7 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=200)),
                 ('exam_date', models.DateField()),
                 ('total_marks', models.IntegerField()),
-                ('subjects', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='subjects.subjects')),
+                ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='subjects.Subject')),
             ],
         ),
     ]

@@ -6,6 +6,6 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('dashboard/', include('dashboard.urls')),
     path('', include('planner.urls')),
-   path('subjects/', include('subjects.urls')),
-
+    path('subjects/', include('subjects.urls')),
+    path('resources/', include('resources.urls')),
 ]

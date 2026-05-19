@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="/static/css/resources.css">
+{% endblock %}
+
+{% block content %}
+
+<div class="detail-wrapper">
+
+    <a href="{% url 'resources:resources_list' %}" class="back-link">← Back to Resources</a>
+
+    <div class="detail-card">
+        <span class="badge badge-{{ resource.category }}">{{ resource.get_category_display }}</span>
+        {% if resource.is_emergency %}
+            <span class="badge badge-emergency">🚨 Emergency</span>
+        {% endif %}
+
+        <h1>{{ resource.title }}</h1>
+
+        <p class="detail-desc">{{ resource.description }}</p>
+
+        {% if resource.url %}
+            <a href="{{ resource.url }}" target="_blank" class="res-btn res-btn-primary" style="width:fit-content">
+                Open Resource →
+            </a>
+        {% endif %}
+
+        <p class="detail-meta">Added: {{ resource.created_at|date:"F j, Y" }}</p>
+    </div>
+
+</div>
+
+{% endblock %}

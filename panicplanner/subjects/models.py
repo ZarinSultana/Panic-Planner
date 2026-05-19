@@ -16,7 +16,7 @@ class Subject(models.Model):
 
 
 class Exam(models.Model):
-    subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+    subject = models.ForeignKey(Subject, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     exam_date = models.DateField()
     total_marks = models.IntegerField()
