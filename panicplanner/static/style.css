@@ -1,0 +1,166 @@
+/* static/css/style.css */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f172a; /* মূল ব্যাকগ্রাউন্ড কালার */
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* পুরো স্ক্রিনের লেআউট */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* বাম পাশের সাইডবার */
+.sidebar {
+    width: 260px;
+    background-color: #0f172a;
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.sidebar h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar-menu a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    color: #38bdf8; /* একটিভ বা হোভার করলে লাইট ব্লু */
+}
+
+/* ডান পাশের মেইন কন্টেন্ট */
+.main-content {
+    flex: 1;
+    background-color: #0b0f19;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* টপ প্রোফাইল বার */
+.top-profile-bar {
+    background-color: #1e293b;
+    padding: 15px 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #cbd5e1;
+}
+
+/* স্বাগতম কার্ড */
+.welcome-card {
+    background-color: #1e293b;
+    padding: 35px;
+    border-radius: 16px;
+}
+
+.welcome-card h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.welcome-card p {
+    color: #94a3b8;
+    font-size: 16px;
+}
+
+/* ৪টি কার্ডের গ্রিড লেআউট */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.stat-card h3 {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.stat-card .number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #38bdf8; /* ব্লু কালার নম্বর */
+}
+
+/* নিচের ২ কলামের টেবিল সেকশন */
+.bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.data-card {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.data-card h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table td {
+    padding: 16px 0;
+    font-size: 16px;
+    color: #cbd5e1;
+}
+
+.data-table tr:not(:last-child) {
+    border-bottom: 1px solid #334155;
+}
+
+.data-table td.right-align {
+    text-align: right;
+    color: #94a3b8;
+}
+
+.data-table td.progress-blue {
+    text-align: right;
+    color: #38bdf8;
+    font-weight: bold;
+}

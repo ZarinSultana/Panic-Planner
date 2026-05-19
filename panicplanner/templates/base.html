@@ -1,87 +1,42 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <title>Panic Planner</title>
-
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/subjects.css' %}">
-
-    {% block extra_css %}
-    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<div class="layout">
+<div class="container">
 
-    <div class="sidebar">
-
+    <!-- Sidebar -->
+    <aside class="sidebar">
         <h2 class="logo">Panic Planner</h2>
 
-        <ul class="menu">
-
-            <li>
-                <a href="{% url 'dashboard' %}">
-                    Dashboard
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Study Planner
-                </a>
-            </li>
-
-            <li>
-                <a href="{% url 'subject_list' %}">
-                    Syllabus
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Tasks
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    Notes
-                </a>
-            </li>
-
+        <ul>
+            <li>Dashboard</li>
+            <li>Study Planner</li>
+            <li>Syllabus</li>
+            <li>Tasks</li>
+            <li>Notes</li>
         </ul>
+    </aside>
 
-        <div class="logout-section">
+    <!-- Main content -->
+    <main class="main">
 
-            <a href="{% url 'logout' %}" class="logout-btn">
-                Logout
-            </a>
-
-        </div>
-
-    </div>
-    <div class="main">
-
+        <!-- Topbar -->
         <div class="topbar">
-
-            <div class="welcome">
-                Welcome, {{ user.username }}
-            </div>
-
-            <div class="profile">
-                <span>Profile</span>
-            </div>
-
+            <div>Welcome, eifa</div>
+            <div>Profile</div>
         </div>
 
         {% block content %}
         {% endblock %}
 
-    </div>
+    </main>
 
 </div>
 
