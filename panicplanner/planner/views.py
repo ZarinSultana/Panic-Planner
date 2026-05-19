@@ -8,6 +8,9 @@ from datetime import date, timedelta
 from .models import PlannerSettings
 from .forms import PlannerSettingsForm
 
+def study_planner(request):
+    return render(request, 'planner/study_planner.html')
+
 @login_required
 def planner_home(request):
     tasks = StudyTask.objects.filter(user=request.user)

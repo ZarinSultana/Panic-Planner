@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/subjects.css' %}">
+    <link rel="stylesheet" href="{% static 'planner/css/style.css' %}">
+
 
     {% block extra_css %}
     {% endblock %}
@@ -30,7 +32,7 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="{% url 'planner_home' %}">
                     Study Planner
                 </a>
             </li>
@@ -41,17 +43,8 @@
                 </a>
             </li>
 
-            <li>
-                <a href="#">
-                    Tasks
-                </a>
-            </li>
 
-            <li>
-                <a href="#">
-                    Notes
-                </a>
-            </li>
+
 
         </ul>
 
