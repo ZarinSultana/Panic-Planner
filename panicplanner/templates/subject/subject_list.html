@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="page-header">
+
+    <h2>
+        Subject List
+    </h2>
+
+    <p>
+        Manage all your university subjects, exam schedules,
+        and preparation details from one place.
+    </p>
+
+</div>
+
+<div class="top-actions">
+
+    <a href="{% url 'subject_create' %}" class="add-btn">
+        Add Subject
+    </a>
+
+</div>
+
+<hr>
+
+{% if subjects %}
+
+    {% for subject in subjects %}
+
+    <div class="subject-card">
+
+        <h3>
+            {{ subject.name }}
+        </h3>
+
+        <p>
+            {{ subject.description }}
+        </p>
+
+        <p>
+            <strong>
+                Exam Date:
+            </strong>
+
+            {{ subject.exam_date }}
+        </p>
+
+        <div class="subject-footer">
+
+            <small>
+                Panic Planner Subject Module
+            </small>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    {% endfor %}
+
+{% else %}
+
+<div class="empty-box">
+
+    <h3>
+        No Subjects Added Yet
+    </h3>
+
+    <p>
+        Start by adding your first subject and exam date.
+    </p>
+
+</div>
+
+{% endif %}
+
+{% endblock %}
