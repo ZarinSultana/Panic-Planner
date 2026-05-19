@@ -17,7 +17,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('topic_name', models.CharField(max_length=200)),
                 ('completed', models.BooleanField(default=False)),
-                ('subject', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='subjects.subject')),
+                ('subjects', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='subjects.subjects')),
             ],
         ),
     ]

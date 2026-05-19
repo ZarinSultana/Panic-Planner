@@ -6,5 +6,6 @@ urlpatterns = [
     path('', include('accounts.urls')),
     path('', include('dashboard.urls')),
     path('', include('planner.urls')),
+   path('subjects/', include('subjects.urls')),
 
 ]

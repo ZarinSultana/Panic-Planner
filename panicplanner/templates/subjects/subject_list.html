@@ -1,0 +1,16 @@
+<h1>My Subjects</h1>
+
+<a href="{% url 'subject_create' %}">Add Subject</a>
+
+<ul>
+  {% for subject in subjects %}
+    <li>
+      {{ subject.name }}
+
+      <a href="{% url 'subject_update' subject.id %}">Edit</a>
+      <a href="{% url 'subject_delete' subject.id %}">Delete</a>
+    </li>
+  {% empty %}
+    <li>No subjects found</li>
+  {% endfor %}
+</ul>
