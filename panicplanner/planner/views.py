@@ -111,3 +111,17 @@ def generate_plan(request):
         form = PlannerSettingsForm()
 
     return render(request, 'planner/generate_plan.html', {'form': form})
+
+
+def reschedule_task(request, task_id):
+
+    task = get_object_or_404(StudyTask, id=task_id)
+
+    new_date = task.study_date + timedelta(days=1)
+
+    task.study_date = new_date
+    task.priority = 'High'
+
+    task.save()
+
+    return redirect('planner_home')
