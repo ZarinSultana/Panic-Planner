@@ -55,26 +55,27 @@
                 Join Panic Planner and start organizing your tasks easily.
             </p>
 
+            <!-- ✅ FIXED FORM -->
             <form method="POST">
 
                 {% csrf_token %}
 
                 <div class="input-box">
                     <i class="fa-solid fa-user"></i>
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" name="username" class="form-control" placeholder="Username">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" name="password" class="form-control" placeholder="Password">
                 </div>
 
                 <div class="input-box">
                     <i class="fa-solid fa-lock"></i>
-                    <input type="password" class="form-control" placeholder="Confirm Password">
+                    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password">
                 </div>
 
-                <button class="btn-custom signup-btn">
+                <button type="submit" class="btn-custom signup-btn">
                     <i class="fa-solid fa-user-plus"></i>
                     Sign Up
                 </button>
