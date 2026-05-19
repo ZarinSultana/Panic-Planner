@@ -1,11 +1,11 @@
-/* SUBJECT PAGE */
+
 
 .subject-container {
     padding: 40px;
     color: white;
 }
 
-/* HEADER */
+
 
 .subject-header {
     display: flex;
@@ -19,7 +19,7 @@
     font-weight: 700;
 }
 
-/* ADD BUTTON */
+
 
 .add-btn {
     background: #1da1f2;
@@ -35,7 +35,6 @@
     background: #0d8ae0;
 }
 
-/* SUBJECT LIST */
 
 .subject-list {
     display: flex;
@@ -43,7 +42,6 @@
     gap: 20px;
 }
 
-/* CARD */
 
 .subject-card {
     background: rgba(255,255,255,0.06);
@@ -62,14 +60,12 @@
     background: rgba(255,255,255,0.09);
 }
 
-/* NAME */
 
 .subject-name {
     font-size: 24px;
     font-weight: 600;
 }
 
-/* ACTIONS */
 
 .actions {
     display: flex;
@@ -93,7 +89,7 @@
     background: #dc2626;
 }
 
-/* EMPTY */
+
 
 .empty {
     margin-top: 30px;

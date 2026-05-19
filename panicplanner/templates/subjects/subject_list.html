@@ -1,54 +1,16 @@
-{% extends 'base.html' %}
-{% load static %}
+<h1>My Subjects</h1>
 
-{% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/subjects.css' %}">
-{% endblock %}
+<a href="{% url 'subject_create' %}">Add Subject</a>
 
-{% block content %}
+<ul>
+  {% for subject in subjects %}
+    <li>
+      {{ subject.name }}
 
-<div class="subject-container">
-
-    <div class="subject-header">
-        <h1>My Subjects</h1>
-
-        <a href="{% url 'subject_create' %}" class="add-btn">
-            Add Subject
-        </a>
-    </div>
-
-    <div class="subject-list">
-
-        {% for subject in subjects %}
-
-        <div class="subject-card">
-
-            <div class="subject-name">
-                {{ subject.name }}
-            </div>
-
-            <div class="actions">
-
-                <a href="{% url 'subject_update' subject.id %}" class="edit-btn">
-                    Edit
-                </a>
-
-                <a href="{% url 'subject_delete' subject.id %}" class="delete-btn">
-                    Delete
-                </a>
-
-            </div>
-
-        </div>
-
-        {% empty %}
-
-        <p class="empty">No subjects found</p>
-
-        {% endfor %}
-
-    </div>
-
-</div>
-
-{% endblock %}
+      <a href="{% url 'subject_update' subject.id %}">Edit</a>
+      <a href="{% url 'subject_delete' subject.id %}">Delete</a>
+    </li>
+  {% empty %}
+    <li>No subjects found</li>
+  {% endfor %}
+</ul>
