@@ -9,13 +9,12 @@
 
 <div class="dashboard-container">
 
-    <!-- HEADER SECTION -->
+
     <div class="dashboard-header">
         <h2>Welcome, {{ user.username }} 👋</h2>
         <p>Let's make your exam preparation structured and stress-free.</p>
     </div>
 
-    <!-- STATS CARDS -->
     <div class="card-grid">
 
         <div class="card">
@@ -40,10 +39,8 @@
 
     </div>
 
-    <!-- MAIN GRID -->
     <div class="grid">
 
-        <!-- SCHEDULE -->
         <div class="box">
             <h3>Today's Schedule</h3>
 
@@ -57,7 +54,7 @@
             {% endfor %}
         </div>
 
-        <!-- SYLLABUS -->
+        
         <div class="box">
             <h3>Syllabus Progress</h3>
 
@@ -71,7 +68,7 @@
 
     </div>
 
-    <!-- MOTIVATION BOX -->
+
     <div class="motivation">
         <h3>Daily Motivation</h3>
         <p>{{ motivation_text }}</p>
