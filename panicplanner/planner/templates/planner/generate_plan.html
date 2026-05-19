@@ -1,0 +1,17 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'planner/css/style.css' %}">
+
+<h1>Generate Study Plan</h1>
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{ form.as_p }}
+
+    <button type="submit">
+        Generate Plan
+    </button>
+
+</form>
