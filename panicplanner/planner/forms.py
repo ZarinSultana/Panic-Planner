@@ -1,6 +1,5 @@
 from django import forms
-from .models import StudyTask
-from .models import PlannerSettings
+from .models import StudyTask , PlannerSettings
 
 class StudyTaskForm(forms.ModelForm):
     class Meta:
@@ -14,7 +13,7 @@ class StudyTaskForm(forms.ModelForm):
 class PlannerSettingsForm(forms.ModelForm):
     class Meta:
         model = PlannerSettings
-        fields = ['dail_study_hours','exam_date','total_chapters']
+        fields = ['daily_study_hours','exam_date','total_chapters']
 
         widgets = {
             'exam_date': forms.DateInput(attrs={'type': 'date'}),
