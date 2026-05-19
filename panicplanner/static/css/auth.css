@@ -1,36 +1,82 @@
 body{
-    background:#f4f6f9;
-    font-family:Arial;
+     background: #f4f7f8;
+     font-family: 'Segoe UI', sans-serif;
+     min-height: 100vh;
+}
+
+.main-wrapper{
+     padding: 30px 20px;
+     }
+
+.auth-card{
+     background: white;
+     border-radius: white;
+     overflow: hidden;
+     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+     border: 1px solid #dce8dd;
+     max-width: 700px;
+     margin: auto;
+     }
+
+
+.login-card{
+     border: 1px solid #d7e5ff;
+     }
+.card-top{
+     padding: 28px 32px;
+     border-bottom: 1px solid #e8e8e8;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     }
+
+
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 20px;
+    font-weight: 700;
     }
 
-.container{
-     display:flex;
-     justify-content:center;
-     align-item:center;
-     height:100vh;
-     }
 
-.card{
-     width:350px;
-     background:white;
-     padding:30px;
-     border-radius:15px;
-     }
+.brand i{
+    font-size: 28px;
+    }
 
-input{
-     width:100%;
-     padding:10px;
-     margin:10px 0;
-     border:1px solid #ccc;
-     border-radius:8px;
-     }
+.signup-color{
+    color: #179c2d;
+    }
 
-button{
-     width:100%;
-     padding:10px;
-     background:blue;
-     color:white;
-     border:none;
-     border-radius:8px;
-     cursor:pointer;
-     }
+.login-color{
+   color: #0d6efd;
+   }
+
+.home-link{
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.content{
+    padding: 60px 50px;
+    text-align: center;
+}
+.circle-icon{
+    width: 170px;
+    height: 170px;
+    background: #eef6ee;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.login-bg{
+    background: #edf4ff;
+}
+
+.circle-icon i{
+    font-size: 70px;
+}
