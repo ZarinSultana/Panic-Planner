@@ -1,0 +1,191 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background-color:#f4f7fb;
+}
+
+/* MAIN CONTAINER */
+
+.container{
+    width:90%;
+    margin:auto;
+    padding:20px;
+}
+
+/* HEADER */
+
+.header{
+    background:linear-gradient(to right,#4F9CF9,#2BBBAD);
+    color:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    margin-top:20px;
+    margin-bottom:30px;
+}
+
+.header h1{
+    margin:0;
+    font-size:40px;
+}
+
+.header p{
+    margin-top:10px;
+    font-size:18px;
+}
+
+/* TOP BUTTONS */
+
+.top-buttons{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.main-btn{
+    background-color:#4F9CF9;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    border-radius:10px;
+    margin-right:10px;
+    transition:0.3s;
+    display:inline-block;
+}
+
+.main-btn:hover{
+    background-color:#357de8;
+}
+
+/* TASK GRID */
+
+.task-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+/* TASK CARD */
+
+.task-card{
+    background-color:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.task-card:hover{
+    transform:translateY(-5px);
+}
+
+.task-card h2{
+    color:#2BBBAD;
+    margin-bottom:15px;
+}
+
+.task-card p{
+    color:#555;
+    margin-bottom:10px;
+}
+
+/* PRIORITY COLORS */
+
+.high{
+    color:red;
+    font-weight:bold;
+}
+
+.medium{
+    color:orange;
+    font-weight:bold;
+}
+
+.low{
+    color:green;
+    font-weight:bold;
+}
+
+/* BUTTONS */
+
+.small-btn{
+    display:inline-block;
+    margin-top:10px;
+    margin-right:8px;
+    padding:8px 14px;
+    border-radius:8px;
+    text-decoration:none;
+    color:white;
+    background-color:#2BBBAD;
+    transition:0.3s;
+}
+
+.small-btn:hover{
+    opacity:0.8;
+}
+
+.delete-btn{
+    background-color:#ff5c5c;
+}
+
+.complete-btn{
+    background-color:#4F9CF9;
+}
+
+.reschedule-btn{
+    background-color:#ff9800;
+}
+
+/* COMPLETED TEXT */
+
+.completed{
+    color:green;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* FORM DESIGN */
+
+.form-container{
+    width:50%;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0px 3px 10px rgba(0,0,0,0.1);
+    margin-top:50px;
+}
+
+.form-container h1{
+    text-align:center;
+    color:#4F9CF9;
+    margin-bottom:20px;
+}
+
+form p{
+    margin-bottom:15px;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    margin-top:5px;
+}
+
+button{
+    background-color:#4F9CF9;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background-color:#357de8;
+}

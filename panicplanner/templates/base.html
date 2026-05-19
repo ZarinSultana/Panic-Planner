@@ -25,37 +25,26 @@
         <ul class="menu">
 
             <li>
-                <a href="{% url 'dashboard' %}">
-                    Dashboard
-                </a>
+                <a href="{% url 'dashboard' %}">Dashboard</a>
             </li>
 
             <li>
-                <a href="#">
-                    Study Planner
-                </a>
+                <a href="#">Study Planner</a>
             </li>
 
             <li>
-                <a href="{% url 'subject_list' %}">
-                    Syllabus
-                </a>
+                <a href="{% url 'subject_list' %}">Syllabus</a>
             </li>
 
             <li>
-                <a href="#">
-                    Tasks
-                </a>
+                <a href="#">Tasks</a>
             </li>
 
             <li>
-                <a href="#">
-                    Notes
-                </a>
+                <a href="#">Notes</a>
             </li>
 
         </ul>
-
 
         <div class="logout-section">
 
@@ -70,7 +59,6 @@
 
     <div class="main">
 
-
         <div class="topbar">
 
             <div class="welcome">
@@ -82,7 +70,6 @@
             </div>
 
         </div>
-
 
         {% block content %}
         {% endblock %}
