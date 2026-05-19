@@ -2,16 +2,20 @@
 
 <link rel="stylesheet" href="{% static 'planner/css/style.css' %}">
 
-<h1>Generate Study Plan</h1>
+<div class="form-container">
 
-<form method="POST">
 
-    {% csrf_token %}
+      <h1>Generate Automatic Plan</h1>
 
-    {{ form.as_p }}
+      <form method="POST">
 
-    <button type="submit">
-        Generate Plan
-    </button>
+           {% csrf_token %}
 
-</form>
+           {{ form.as_p }}
+
+           <button type="submit">
+              Generate Plan
+           </button>
+
+      </form>
+</div>

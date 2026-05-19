@@ -1,8 +1,21 @@
-<h1>Add Task</h1>
+{% load static %}
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
+<link rel="stylesheet" href="{% static 'planner/css/style.css' %}">
 
-    <button type="submit">Save Task</button>
-</form>
+<div class="form-container">
+
+    <h1>Add Study Task</h1>
+
+    <form method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">
+            Save Task
+        </button>
+
+    </form>
+
+</div>

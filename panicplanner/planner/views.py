@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from .models import StudyTask
@@ -7,18 +8,19 @@ from datetime import date, timedelta
 from .models import PlannerSettings
 from .forms import PlannerSettingsForm
 
-
+@login_required
 def planner_home(request):
-    tasks = StudyTask.objects.all()
+    tasks = StudyTask.objects.filter(user=request.user)
     return render(request, 'planner/home.html', {'tasks': tasks})
 
+@login_required
 def add_task(request):
     if request.method == 'POST':
         form = StudyTaskForm(request.POST)
 
         if form.is_valid():
             task = form.save(commit=False)
-            task.user = User.objects.first()
+            task.user = request.user
             task.save()
             return redirect('planner_home')
 
@@ -28,6 +30,7 @@ def add_task(request):
     return render(request, 'planner/add_task.html', {'form': form})
 
 
+@login_required
 def update_task(request, task_id):
     task = get_object_or_404(StudyTask, id=task_id)
 
@@ -43,7 +46,7 @@ def update_task(request, task_id):
 
     return render(request, 'planner/update_task.html', {'form': form})
 
-
+@login_required
 def delete_task(request, task_id):
     task = get_object_or_404(StudyTask, id=task_id)
 
@@ -53,7 +56,7 @@ def delete_task(request, task_id):
 
     return render(request, 'planner/delete_task.html', {'task': task})
 
-
+@login_required
 def complete_task(request, task_id):
     task = get_object_or_404(StudyTask, id=task_id)
     task.is_completed = True
@@ -61,7 +64,7 @@ def complete_task(request, task_id):
 
     return redirect('planner_home')
 
-
+@login_required
 def generate_plan(request):
 
     if request.method == 'POST':
@@ -69,7 +72,7 @@ def generate_plan(request):
 
         if form.is_valid():
             planner = form.save(commit=False)
-            planner.user = User.objects.first()
+            planner.user = request.user
             planner.save()
 
             exam_date = planner.exam_date
@@ -112,7 +115,7 @@ def generate_plan(request):
 
     return render(request, 'planner/generate_plan.html', {'form': form})
 
-
+@login_required
 def reschedule_task(request, task_id):
 
     task = get_object_or_404(StudyTask, id=task_id)

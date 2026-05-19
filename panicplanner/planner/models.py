@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from subjects.models import Subject
+
 
 class StudyTask(models.Model):
     PRIORITY_CHOICES = [
@@ -10,6 +12,13 @@ class StudyTask(models.Model):
     ]
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    subject = models.ForeignKey(
+        Subject,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True
+    )
     title = models.CharField(max_length=200)
     description = models.TextField()
     study_date = models.DateField()

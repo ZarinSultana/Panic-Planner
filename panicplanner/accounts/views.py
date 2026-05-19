@@ -25,11 +25,16 @@ def user_login(request):
         user = authenticate(
             request,
             username=username,
-            password=password)
+            password=password
+        )
+
+        print(username)
+        print(password)
+        print(user)
 
         if user is not None:
             login(request, user)
-            return redirect('dashboard')
+            return redirect('planner_home')
 
     return render(request, 'accounts/login.html')
 

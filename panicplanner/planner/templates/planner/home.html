@@ -1,39 +1,133 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'planner/css/style.css'%}"
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
+
     <title>Panic Planner</title>
+
+    <link rel="stylesheet" href="{% static 'planner/css/style.css' %}">
+
 </head>
-<body>
-<h1> Panic Planner dashboard</h1>
-<a href="{% url 'generate_plan'%}">
-    Generate Automatic Plan
-</a>
-<a href="{% url 'add_task' %}"> Add Task</a>
-<hr>
-
-{% for task in tasks %}
-
-<h3>{{ task.title }}</h3>
-<p>{{ task.description }}</p>
-<p>{{ task.study_date }}</p>
-<p>{{ task.priority }}</p>
-
-{% if tasks.is_completed %}
-<p> Completed</p>
-{% else %}
-<a href ="{% url 'complete_task' task.id % }"> Complete</a>
-{% endif %}
-
-<a href="{% url 'update_task' task.id %}">Update</a>
-<a href="{% url 'delete_task' task.id %}">Delete</a>
-<a href="{% url 'reschedule_task' task.id %}">Reschedule</a>
-<hr>
-
-{% endfor %}
-
 
 <body>
+
+<div class="container">
+
+    <div class="header">
+
+        <h1>Panic Planner</h1>
+
+        <p>Smart Automatic Study Planner</p>
+
+    </div>
+
+    <div class="top-buttons">
+
+        <a class="main-btn" href="{% url 'add_task' %}">
+            Add Task
+        </a>
+
+        <a class="main-btn" href="{% url 'generate_plan' %}">
+            Generate Plan
+        </a>
+
+    </div>
+
+    <div class="task-grid">
+
+        {% for task in tasks %}
+
+        <div class="task-card">
+
+            <h2>{{ task.title }}</h2>
+
+            <p>{{ task.description }}</p>
+
+            <p>
+                <strong>Date:</strong>
+                {{ task.study_date }}
+            </p>
+
+            <p>
+                <strong>Duration:</strong>
+                {{ task.duration }} minutes
+            </p>
+
+            <p>
+
+                <strong>Priority:</strong>
+
+                {% if task.priority == 'High' %}
+
+                    <span class="high">
+                        {{ task.priority }}
+                    </span>
+
+                {% elif task.priority == 'Medium' %}
+
+                    <span class="medium">
+                        {{ task.priority }}
+                    </span>
+
+                {% else %}
+
+                    <span class="low">
+                        {{ task.priority }}
+                    </span>
+
+                {% endif %}
+
+            </p>
+
+            {% if task.is_completed %}
+
+                <p class="completed">
+                    Completed
+                </p>
+
+            {% else %}
+
+                <a class="small-btn complete-btn"
+                   href="{% url 'complete_task' task.id %}">
+
+                    Complete
+
+                </a>
+
+                <a class="small-btn reschedule-btn"
+                   href="{% url 'reschedule_task' task.id %}">
+
+                    Reschedule
+
+                </a>
+
+            {% endif %}
+
+            <br><br>
+
+            <a class="small-btn"
+               href="{% url 'update_task' task.id %}">
+
+                Update
+
+            </a>
+
+            <a class="small-btn delete-btn"
+               href="{% url 'delete_task' task.id %}">
+
+                Delete
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
 </html>
