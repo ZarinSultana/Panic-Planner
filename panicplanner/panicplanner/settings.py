@@ -126,6 +126,7 @@ LOGIN_URL = 'login'
 
 STATIC_URL = 'static/'
 
+
 STATICFILES_DIRS = [
-    BASE_DIR / "planner/static",
+    BASE_DIR / "static",
 ]

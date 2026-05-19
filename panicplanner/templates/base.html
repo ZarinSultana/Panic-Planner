@@ -7,7 +7,6 @@
     <title>Panic Planner</title>
 
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/subjects.css' %}">
 
     {% block extra_css %}
     {% endblock %}
@@ -19,8 +18,10 @@
 
 
     <div class="sidebar">
+        <h1 style = "color:red;"> TESTING TEMPLATE</h1>
 
         <h2 class="logo">Panic Planner</h2>
+
 
         <ul class="menu">
 
@@ -29,7 +30,7 @@
             </li>
 
             <li>
-                <a href="#">Study Planner</a>
+                <a href="/generate-plan/">Study Planner</a>
             </li>
 
             <li>
@@ -37,12 +38,13 @@
             </li>
 
             <li>
-                <a href="#">Tasks</a>
+                <a href="/add/" class="active">
+                    Add Study task
+                </a>
             </li>
 
-            <li>
-                <a href="#">Notes</a>
-            </li>
+
+
 
         </ul>
 
