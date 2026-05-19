@@ -44,7 +44,7 @@ class Reminder(models.Model):
 class PlannerSettings(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     daily_study_hours = models.IntegerField()
-    exam_date =models.DateField
+    exam_date =models.DateField()
     total_chapters = models.IntegerField()
 
     def __str__(self):
