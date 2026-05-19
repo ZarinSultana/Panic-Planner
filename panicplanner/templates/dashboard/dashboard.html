@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/dashboard/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <!-- HEADER SECTION -->
+    <div class="dashboard-header">
+        <h2>Welcome, {{ user.username }} 👋</h2>
+        <p>Let's make your exam preparation structured and stress-free.</p>
+    </div>
+
+    <!-- STATS CARDS -->
+    <div class="card-grid">
+
+        <div class="card">
+            <h3>Study Hours</h3>
+            <p class="value">{{ study_hours }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Syllabus Completed</h3>
+            <p class="value">{{ syllabus_percent }}%</p>
+        </div>
+
+        <div class="card">
+            <h3>Pending Tasks</h3>
+            <p class="value">{{ pending_tasks }}</p>
+        </div>
+
+        <div class="card">
+            <h3>Upcoming Exam</h3>
+            <p class="value">{{ next_exam_days }} days</p>
+        </div>
+
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="grid">
+
+        <!-- SCHEDULE -->
+        <div class="box">
+            <h3>Today's Schedule</h3>
+
+            {% for task in today_tasks %}
+                <div class="item">
+                    <span>{{ task.title }}</span>
+                    <small>{{ task.time }}</small>
+                </div>
+            {% empty %}
+                <p>No tasks for today 🎉</p>
+            {% endfor %}
+        </div>
+
+        <!-- SYLLABUS -->
+        <div class="box">
+            <h3>Syllabus Progress</h3>
+
+            {% for subject in subjects %}
+                <div class="item">
+                    <span>{{ subject.name }}</span>
+                    <span>{{ subject.progress }}%</span>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <!-- MOTIVATION BOX -->
+    <div class="motivation">
+        <h3>Daily Motivation</h3>
+        <p>{{ motivation_text }}</p>
+    </div>
+
+</div>
+
+{% endblock %}
