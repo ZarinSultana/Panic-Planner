@@ -1,98 +1,109 @@
 
-
-.subject-container {
-    padding: 40px;
-    color: white;
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0f2fe, #ede9fe);
 }
 
+h1 {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 34px;
+    color: #1e1b4b;
+    letter-spacing: 1px;
+}
 
-
-.subject-header {
+.top-bar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+    justify-content: center;
+    margin-top: 20px;
 }
-
-.subject-header h1 {
-    font-size: 36px;
-    font-weight: 700;
-}
-
-
 
 .add-btn {
-    background: #1da1f2;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
     color: white;
     padding: 12px 22px;
-    border-radius: 10px;
+    border-radius: 14px;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
     transition: 0.3s;
 }
 
 .add-btn:hover {
-    background: #0d8ae0;
+    transform: translateY(-3px);
 }
 
-
-.subject-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+ul {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 0;
+    list-style: none;
 }
 
-
-.subject-card {
-    background: rgba(255,255,255,0.06);
-    padding: 22px;
-    border-radius: 16px;
+ul li {
+    background: white;
+    margin: 16px 0;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    transition: 0.3s;
+    border-left: 7px solid #6366f1;
+    transition: 0.3s ease;
 }
 
-.subject-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.09);
+ul li:hover {
+    transform: translateY(-5px);
+    background: #f8fafc;
 }
 
-
-.subject-name {
-    font-size: 24px;
+ul li span {
+    font-size: 18px;
     font-weight: 600;
+    color: #111827;
 }
-
 
 .actions {
     display: flex;
-    gap: 12px;
-}
-
-.edit-btn,
-.delete-btn {
-    padding: 10px 18px;
-    border-radius: 8px;
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
+    gap: 10px;
 }
 
 .edit-btn {
-    background: #2563eb;
+    background: #fbbf24;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.edit-btn:hover {
+    background: #f59e0b;
+    transform: scale(1.05);
 }
 
 .delete-btn {
-    background: #dc2626;
+    background: #ef4444;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
 }
 
+.delete-btn:hover {
+    background: #dc2626;
+    transform: scale(1.05);
+}
 
-
-.empty {
-    margin-top: 30px;
-    font-size: 18px;
-    opacity: 0.8;
+ul li:empty {
+    text-align: center;
+    color: gray;
 }
