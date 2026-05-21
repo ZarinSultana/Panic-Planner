@@ -31,8 +31,9 @@ def user_login(request):
             login(request, user)
             return redirect('dashboard')
 
-    return render(request, 'accounts/login.html')
 
+        return render(request, 'accounts/login.html',{'error':'Invalid username or password'})
+    return render(request, 'accounts/login.html')
 
 def user_logout(request):
     logout(request)

@@ -49,3 +49,4 @@ def subject_delete(request, pk):
         return redirect('subject_list')
 
     return render(request, 'subjects/subject_delete.html', {'subjects': subject})
+
